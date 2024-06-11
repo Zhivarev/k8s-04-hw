@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multitool
+#  namespace: netology
+  labels:
+    app: multitool
+spec:
+  containers:
+  - name: multitool
+    image: wbitt/network-multitool
+    env:
+    - name: HTTP_PORT
+      value: "1280"
+    ports:
+    - name: http
+      containerPort: 1280

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-nginx-multitool-2
+#  namespace: netology
+spec:
+  ports:
+    - name: http-nginx
+      port: 80
+      nodePort: 30000
+    - name: http-multitool
+      port: 8080
+      nodePort: 30001
+  selector:
+    app: web
+  type: NodePort
